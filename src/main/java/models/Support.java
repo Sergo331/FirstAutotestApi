@@ -1,13 +1,6 @@
 package models;
 
-public class Support {
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
+public class Support {private String url;
 
     public String getText() {
         return text;
@@ -17,7 +10,13 @@ public class Support {
         this.text = text;
     }
 
-    private String url;
-    private String text;
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    private String text;
 }
