@@ -9,11 +9,8 @@ import org.junit.jupiter.api.Test;
 public class GetSingleResourseTests{
     private final String BASE_URL = "https://reqres.in/api/unknown/2";
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-
     @Test
-
-    public void testGetListResourse() throws Exception {
+    public void testGetSingleResourse() throws Exception {
         Response response = RestAssured
                 .given()
                 .when()

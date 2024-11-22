@@ -9,10 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ResourseNotFoundTest {
     private final String BASE_URL = "https://reqres.in/api/unknown";
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-
     @Test
-
     public void testResourseNotFound() throws Exception {
         Response response = RestAssured
                 .given()
