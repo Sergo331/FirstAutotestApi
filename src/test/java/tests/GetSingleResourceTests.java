@@ -10,7 +10,8 @@ import static io.qameta.allure.Allure.step;
 
 @Epic("Проверка одиночного ресурса")
 @Feature("Получает информацию о ресурсе")
-public class GetSingleResourseTests{
+public class GetSingleResourceTests {
+
     private final String BASE_URL = "https://reqres.in/api/unknown/2";
     private final ObjectMapper objectMapper = new ObjectMapper();
 

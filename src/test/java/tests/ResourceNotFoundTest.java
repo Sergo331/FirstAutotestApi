@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("Проверка одного ресурса")
 @Feature("Получает информацию о ресурсе")
-public class ResourseNotFoundTest {
+public class ResourceNotFoundTest {
     private final String BASE_URL = "https://reqres.in/api/unknown";
     private final ObjectMapper objectMapper = new ObjectMapper();
 
