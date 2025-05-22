@@ -1,8 +1,8 @@
 package tests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import models.UserCredentials;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class CreateUserTestNameJob {
 
     private final String BASE_URL = "https://reqres.in/api/users";
-    private final com.fasterxml.jackson.databind.ObjectMapper ObjectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
     public void testCreateUserWithNameJob() throws JsonProcessingException {
@@ -26,6 +26,7 @@ public class CreateUserTestNameJob {
         Response response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
+                .header("x-api-key","reqres-free-v1")
                 .body(user)
                 .when()
                 .post(BASE_URL)
@@ -35,7 +36,7 @@ public class CreateUserTestNameJob {
                 .response();
 
         step("Десериализация JSON - ответа в объект UserModelResponse");
-        UserModelResponse userModelResponse = ObjectMapper.readValue(response.asString(), UserModelResponse.class);
+        UserModelResponse userModelResponse = objectMapper.readValue(response.asString(), UserModelResponse.class);
 
         step("Проверяем, что в ответе присутствуют id и createAt");
         assertNotNull(userModelResponse.getId(), "Id не должно быть null");
