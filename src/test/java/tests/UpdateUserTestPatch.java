@@ -26,6 +26,7 @@ public class UpdateUserTestPatch {
         Response response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
+                .header("x-api-key","reqres-free-v1")
                 .body(user)
                 .when()
                 .patch(BASE_URL + "/2")
