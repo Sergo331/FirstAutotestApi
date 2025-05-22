@@ -2,6 +2,7 @@ package tests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +19,7 @@ public class DeleteUserTest{
         step("Отправка DELETE - запроса");
         Response response = RestAssured
                 .given()
+                .contentType(ContentType.JSON)
                 .when()
                 .delete(BASE_URL)
                 .then()
