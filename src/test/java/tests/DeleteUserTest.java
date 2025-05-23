@@ -20,6 +20,7 @@ public class DeleteUserTest{
         Response response = RestAssured
                 .given()
                 .contentType(ContentType.JSON)
+                .header("x-api-key","reqres-free-v1")
                 .when()
                 .delete(BASE_URL)
                 .then()
@@ -29,6 +30,6 @@ public class DeleteUserTest{
 
         step("Тело ответа пустое");
         String responsebody = response.getBody().asString();
-        assertEquals(" ", responsebody, "Тело ответа не является пустым");
+        assertEquals("", responsebody, "Тело ответа не является пустым");
     }
 }
