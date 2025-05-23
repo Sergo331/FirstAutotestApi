@@ -21,6 +21,7 @@ public class ResourceNotFoundTest {
         step("Отправка GET - запроса");
         Response response = RestAssured
                 .given()
+                .header("x-api-key","reqres-free-v1")
                 .when()
                 .get(BASE_URL + "/555")
                 .then()
